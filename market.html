@@ -5,19 +5,28 @@
   <title>Market – Dealership Simulator</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <header class="topbar">
-    <h1>Car Market</h1>
-    <div id="moneyDisplay"></div>
-    <nav>
-      <a href="market.html">Market</a>
+<body class="page-app">
+  <header class="app-topbar">
+    <div class="brand-left">
+      <div class="brand-logo small">AUTOLINE</div>
+      <span class="app-title">Market</span>
+    </div>
+    <div id="moneyDisplay" class="money-pill"></div>
+    <nav class="app-nav">
+      <a href="market.html" class="active">Market</a>
       <a href="garage.html">Garage</a>
     </nav>
   </header>
 
-  <main class="container">
-    <h2>Available Cars</h2>
-    <div id="marketList" class="card-grid"></div>
+  <main class="app-main">
+    <section class="app-header-row">
+      <div>
+        <h1>Available Inventory</h1>
+        <p class="sub">Browse current market listings and acquire stock for your dealership.</p>
+      </div>
+    </section>
+
+    <section id="marketList" class="card-grid"></section>
   </main>
 
   <script src="script.js"></script>

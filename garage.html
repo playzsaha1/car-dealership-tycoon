@@ -5,19 +5,28 @@
   <title>Garage – Dealership Simulator</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <header class="topbar">
-    <h1>Your Garage</h1>
-    <div id="moneyDisplay"></div>
-    <nav>
+<body class="page-app">
+  <header class="app-topbar">
+    <div class="brand-left">
+      <div class="brand-logo small">AUTOLINE</div>
+      <span class="app-title">Garage</span>
+    </div>
+    <div id="moneyDisplay" class="money-pill"></div>
+    <nav class="app-nav">
       <a href="market.html">Market</a>
-      <a href="garage.html">Garage</a>
+      <a href="garage.html" class="active">Garage</a>
     </nav>
   </header>
 
-  <main class="container">
-    <h2>Owned Cars</h2>
-    <div id="garageList" class="card-grid"></div>
+  <main class="app-main">
+    <section class="app-header-row">
+      <div>
+        <h1>Your Inventory</h1>
+        <p class="sub">Review, price, and flip your current stock for maximum profit.</p>
+      </div>
+    </section>
+
+    <section id="garageList" class="card-grid"></section>
   </main>
 
   <script src="script.js"></script>
