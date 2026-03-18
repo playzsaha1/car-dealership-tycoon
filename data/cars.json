@@ -29,13 +29,4 @@
     "condition": "Needs Work",
     "segment": "Sedan"
   },
-  {
-    "id": 4,
-    "brand": "Bmw",
-    "model": "M3",
-    "year": 2023,
-    "basePrice": 160000,
-    "mileage": 2400,
-    "condition": "good"
-    "segment": "sedan"
-
+  
