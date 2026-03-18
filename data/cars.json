@@ -28,16 +28,5 @@
     "mileage": 90000,
     "condition": "Needs Work",
     "segment": "Sedan"
-  },
-  {
-    "id": 4,
-    "brand": "BMW",
-    "model": "320i",
-    "year": 2016,
-    "basePrice": 33000,
-    "mileage": 85000,
-    "condition": "Good",
-    "segment": "Sedan"
-  }, 
-]  
-
+  }
+]
