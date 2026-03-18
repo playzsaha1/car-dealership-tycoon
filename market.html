@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Market – Dealership Simulator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Car Market</h1>
+    <div id="moneyDisplay"></div>
+    <nav>
+      <a href="market.html">Market</a>
+      <a href="garage.html">Garage</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Available Cars</h2>
+    <div id="marketList" class="card-grid"></div>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    loadGame();
+    renderMoney();
+    loadMarket();
+  </script>
+</body>
+</html>
