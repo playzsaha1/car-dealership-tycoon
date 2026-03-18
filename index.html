@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dealership Simulator</title>
+  <title>Car Dealership Simulator</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <div class="container center">
     <h1>Car Dealership Simulator</h1>
     <p>Start with a small budget and build your own realistic dealership.</p>
+
     <button id="startBtn">Start New Dealership</button>
     <button id="continueBtn">Continue</button>
   </div>
@@ -19,6 +21,7 @@
       startNewGame();
       window.location.href = 'market.html';
     };
+
     document.getElementById('continueBtn').onclick = () => {
       window.location.href = 'market.html';
     };
