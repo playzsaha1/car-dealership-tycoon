@@ -88,4 +88,19 @@ button:disabled {
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: #45a29e;
+  color: #0b0c10;
+  margin-right: 4px;
+}
