@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="page-app">
+
   <header class="app-topbar">
     <div class="brand-left">
       <div class="brand-logo small">AUTOLINE</div>
@@ -19,12 +20,8 @@
   </header>
 
   <main class="app-main">
-    <section class="app-header-row">
-      <div>
-        <h1>Available Inventory</h1>
-        <p class="sub">Browse current market listings and acquire stock for your dealership.</p>
-      </div>
-    </section>
+    <h1 class="page-title">Available Inventory</h1>
+    <p class="page-sub">Browse the live market and acquire premium stock.</p>
 
     <section id="marketList" class="card-grid"></section>
   </main>
@@ -35,5 +32,6 @@
     renderMoney();
     loadMarket();
   </script>
+
 </body>
 </html>
