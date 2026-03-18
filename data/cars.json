@@ -31,8 +31,8 @@
   },
   {
     "id": 4,
-    "brand": "nissan",
-    "model": "patrol",
+    "brand": "Nissan",
+    "model": "Patrol",
     "year": 2020,
     "basePrice": 100000,
     "mileage": 50000,
@@ -41,13 +41,562 @@
   },
   {
     "id": 5,
-    "brand": "bmw",
-    "model": "m3",
+    "brand": "BMW",
+    "model": "M3",
     "year": 2023,
-    "basePrice":160000,
-    "mileage":8000,
+    "basePrice": 160000,
+    "mileage": 8000,
     "condition": "Good",
-    "segment":"Sedan"
+    "segment": "Sedan"
+  },
+  {
+    "id": 6,
+    "brand": "Honda",
+    "model": "Civic RS",
+    "year": 2021,
+    "basePrice": 32000,
+    "mileage": 28000,
+    "condition": "Excellent",
+    "segment": "Sedan"
+  },
+  {
+    "id": 7,
+    "brand": "Hyundai",
+    "model": "i30 N Line",
+    "year": 2020,
+    "basePrice": 29000,
+    "mileage": 36000,
+    "condition": "Good",
+    "segment": "Hatchback"
+  },
+  {
+    "id": 8,
+    "brand": "Kia",
+    "model": "Sportage GT-Line",
+    "year": 2021,
+    "basePrice": 41000,
+    "mileage": 26000,
+    "condition": "Excellent",
+    "segment": "SUV"
+  },
+  {
+    "id": 9,
+    "brand": "Ford",
+    "model": "Ranger XLT",
+    "year": 2019,
+    "basePrice": 47000,
+    "mileage": 68000,
+    "condition": "Good",
+    "segment": "Ute"
+  },
+  {
+    "id": 10,
+    "brand": "Toyota",
+    "model": "Hilux SR5",
+    "year": 2022,
+    "basePrice": 62000,
+    "mileage": 22000,
+    "condition": "Excellent",
+    "segment": "Ute"
+  },
+  {
+    "id": 11,
+    "brand": "Volkswagen",
+    "model": "Golf GTI",
+    "year": 2018,
+    "basePrice": 34000,
+    "mileage": 59000,
+    "condition": "Good",
+    "segment": "Hatchback"
+  },
+  {
+    "id": 12,
+    "brand": "Audi",
+    "model": "A4 S Line",
+    "year": 2020,
+    "basePrice": 52000,
+    "mileage": 31000,
+    "condition": "Good",
+    "segment": "Sedan"
+  },
+  {
+    "id": 13,
+    "brand": "Audi",
+    "model": "Q5",
+    "year": 2019,
+    "basePrice": 58000,
+    "mileage": 47000,
+    "condition": "Fair",
+    "segment": "SUV"
+  },
+  {
+    "id": 14,
+    "brand": "Lexus",
+    "model": "IS 300",
+    "year": 2021,
+    "basePrice": 54000,
+    "mileage": 24000,
+    "condition": "Excellent",
+    "segment": "Sedan"
+  },
+  {
+    "id": 15,
+    "brand": "Subaru",
+    "model": "WRX",
+    "year": 2018,
+    "basePrice": 39000,
+    "mileage": 71000,
+    "condition": "Fair",
+    "segment": "Sedan"
+  },
+  {
+    "id": 16,
+    "brand": "Subaru",
+    "model": "Outback AWD",
+    "year": 2020,
+    "basePrice": 44000,
+    "mileage": 49000,
+    "condition": "Good",
+    "segment": "Wagon"
+  },
+  {
+    "id": 17,
+    "brand": "Tesla",
+    "model": "Model 3 RWD",
+    "year": 2022,
+    "basePrice": 61000,
+    "mileage": 18000,
+    "condition": "Excellent",
+    "segment": "EV"
+  },
+  {
+    "id": 18,
+    "brand": "Tesla",
+    "model": "Model Y Long Range",
+    "year": 2023,
+    "basePrice": 76000,
+    "mileage": 9000,
+    "condition": "Excellent",
+    "segment": "EV"
+  },
+  {
+    "id": 19,
+    "brand": "Porsche",
+    "model": "Macan",
+    "year": 2019,
+    "basePrice": 93000,
+    "mileage": 42000,
+    "condition": "Good",
+    "segment": "SUV"
+  },
+  {
+    "id": 20,
+    "brand": "Porsche",
+    "model": "911 Carrera",
+    "year": 2017,
+    "basePrice": 175000,
+    "mileage": 38000,
+    "condition": "Good",
+    "segment": "Coupe"
+  },
+  {
+    "id": 21,
+    "brand": "Mercedes-Benz",
+    "model": "GLC 300",
+    "year": 2021,
+    "basePrice": 79000,
+    "mileage": 25000,
+    "condition": "Excellent",
+    "segment": "SUV"
+  },
+  {
+    "id": 22,
+    "brand": "Mercedes-Benz",
+    "model": "A250",
+    "year": 2020,
+    "basePrice": 51000,
+    "mileage": 33000,
+    "condition": "Good",
+    "segment": "Hatchback"
+  },
+  {
+    "id": 23,
+    "brand": "BMW",
+    "model": "330i M Sport",
+    "year": 2021,
+    "basePrice": 69000,
+    "mileage": 21000,
+    "condition": "Excellent",
+    "segment": "Sedan"
+  },
+  {
+    "id": 24,
+    "brand": "BMW",
+    "model": "X5 xDrive30d",
+    "year": 2019,
+    "basePrice": 98000,
+    "mileage": 53000,
+    "condition": "Good",
+    "segment": "SUV"
+  },
+  {
+    "id": 25,
+    "brand": "Nissan",
+    "model": "Navara ST-X",
+    "year": 2021,
+    "basePrice": 49000,
+    "mileage": 39000,
+    "condition": "Good",
+    "segment": "Ute"
+  },
+  {
+    "id": 26,
+    "brand": "Isuzu",
+    "model": "D-MAX LS-U",
+    "year": 2022,
+    "basePrice": 56000,
+    "mileage": 27000,
+    "condition": "Excellent",
+    "segment": "Ute"
+  },
+  {
+    "id": 27,
+    "brand": "Mitsubishi",
+    "model": "Triton GLS",
+    "year": 2020,
+    "basePrice": 43000,
+    "mileage": 61000,
+    "condition": "Fair",
+    "segment": "Ute"
+  },
+  {
+    "id": 28,
+    "brand": "Toyota",
+    "model": "LandCruiser Prado GXL",
+    "year": 2018,
+    "basePrice": 67000,
+    "mileage": 84000,
+    "condition": "Good",
+    "segment": "SUV"
+  },
+  {
+    "id": 29,
+    "brand": "Toyota",
+    "model": "Camry SX",
+    "year": 2022,
+    "basePrice": 39000,
+    "mileage": 17000,
+    "condition": "Excellent",
+    "segment": "Sedan"
+  },
+  {
+    "id": 30,
+    "brand": "Mazda",
+    "model": "Mazda3 G25 Astina",
+    "year": 2021,
+    "basePrice": 35000,
+    "mileage": 24000,
+    "condition": "Excellent",
+    "segment": "Hatchback"
+  },
+  {
+    "id": 31,
+    "brand": "Mazda",
+    "model": "BT-50 GT",
+    "year": 2022,
+    "basePrice": 57000,
+    "mileage": 29000,
+    "condition": "Good",
+    "segment": "Ute"
+  },
+  {
+    "id": 32,
+    "brand": "Hyundai",
+    "model": "Tucson Highlander",
+    "year": 2021,
+    "basePrice": 46000,
+    "mileage": 35000,
+    "condition": "Good",
+    "segment": "SUV"
+  },
+  {
+    "id": 33,
+    "brand": "Kia",
+    "model": "Cerato GT",
+    "year": 2020,
+    "basePrice": 31000,
+    "mileage": 43000,
+    "condition": "Good",
+    "segment": "Sedan"
+  },
+  {
+    "id": 34,
+    "brand": "Volkswagen",
+    "model": "Tiguan 162TSI",
+    "year": 2019,
+    "basePrice": 42000,
+    "mileage": 57000,
+    "condition": "Fair",
+    "segment": "SUV"
+  },
+  {
+    "id": 35,
+    "brand": "Skoda",
+    "model": "Octavia RS",
+    "year": 2021,
+    "basePrice": 48000,
+    "mileage": 22000,
+    "condition": "Excellent",
+    "segment": "Sedan"
+  },
+  {
+    "id": 36,
+    "brand": "Honda",
+    "model": "CR-V VTi L",
+    "year": 2019,
+    "basePrice": 36000,
+    "mileage": 61000,
+    "condition": "Good",
+    "segment": "SUV"
+  },
+  {
+    "id": 37,
+    "brand": "Ford",
+    "model": "Mustang GT",
+    "year": 2018,
+    "basePrice": 64000,
+    "mileage": 46000,
+    "condition": "Good",
+    "segment": "Coupe"
+  },
+  {
+    "id": 38,
+    "brand": "Chevrolet",
+    "model": "Camaro 2SS",
+    "year": 2017,
+    "basePrice": 69000,
+    "mileage": 52000,
+    "condition": "Fair",
+    "segment": "Coupe"
+  },
+  {
+    "id": 39,
+    "brand": "Holden",
+    "model": "Commodore SS V Redline",
+    "year": 2016,
+    "basePrice": 74000,
+    "mileage": 88000,
+    "condition": "Fair",
+    "segment": "Sedan"
+  },
+  {
+    "id": 40,
+    "brand": "Toyota",
+    "model": "86 GTS",
+    "year": 2019,
+    "basePrice": 37000,
+    "mileage": 41000,
+    "condition": "Good",
+    "segment": "Coupe"
+  },
+  {
+    "id": 41,
+    "brand": "Subaru",
+    "model": "BRZ S",
+    "year": 2020,
+    "basePrice": 39000,
+    "mileage": 32000,
+    "condition": "Excellent",
+    "segment": "Coupe"
+  },
+  {
+    "id": 42,
+    "brand": "Lexus",
+    "model": "RX 350",
+    "year": 2018,
+    "basePrice": 58000,
+    "mileage": 69000,
+    "condition": "Good",
+    "segment": "SUV"
+  },
+  {
+    "id": 43,
+    "brand": "Jeep",
+    "model": "Grand Cherokee Limited",
+    "year": 2019,
+    "basePrice": 51000,
+    "mileage": 73000,
+    "condition": "Fair",
+    "segment": "SUV"
+  },
+  {
+    "id": 44,
+    "brand": "Range Rover",
+    "model": "Velar",
+    "year": 2018,
+    "basePrice": 72000,
+    "mileage": 81000,
+    "condition": "Needs Work",
+    "segment": "SUV"
+  },
+  {
+    "id": 45,
+    "brand": "Volvo",
+    "model": "XC60",
+    "year": 2021,
+    "basePrice": 63000,
+    "mileage": 26000,
+    "condition": "Excellent",
+    "segment": "SUV"
+  },
+  {
+    "id": 46,
+    "brand": "MG",
+    "model": "ZS Excite",
+    "year": 2022,
+    "basePrice": 25000,
+    "mileage": 19000,
+    "condition": "Good",
+    "segment": "SUV"
+  },
+  {
+    "id": 47,
+    "brand": "BYD",
+    "model": "Atto 3",
+    "year": 2023,
+    "basePrice": 48000,
+    "mileage": 11000,
+    "condition": "Excellent",
+    "segment": "EV"
+  },
+  {
+    "id": 48,
+    "brand": "Polestar",
+    "model": "2 Long Range",
+    "year": 2023,
+    "basePrice": 69000,
+    "mileage": 12000,
+    "condition": "Excellent",
+    "segment": "EV"
+  },
+  {
+    "id": 49,
+    "brand": "Mini",
+    "model": "Cooper S",
+    "year": 2020,
+    "basePrice": 36000,
+    "mileage": 31000,
+    "condition": "Good",
+    "segment": "Hatchback"
+  },
+  {
+    "id": 50,
+    "brand": "Peugeot",
+    "model": "3008 GT",
+    "year": 2021,
+    "basePrice": 47000,
+    "mileage": 28000,
+    "condition": "Good",
+    "segment": "SUV"
+  },
+  {
+    "id": 51,
+    "brand": "Renault",
+    "model": "Megane RS",
+    "year": 2019,
+    "basePrice": 44000,
+    "mileage": 47000,
+    "condition": "Fair",
+    "segment": "Hatchback"
+  },
+  {
+    "id": 52,
+    "brand": "Suzuki",
+    "model": "Jimny",
+    "year": 2022,
+    "basePrice": 39000,
+    "mileage": 15000,
+    "condition": "Excellent",
+    "segment": "SUV"
+  },
+  {
+    "id": 53,
+    "brand": "Mitsubishi",
+    "model": "Outlander Exceed",
+    "year": 2021,
+    "basePrice": 43000,
+    "mileage": 33000,
+    "condition": "Good",
+    "segment": "SUV"
+  },
+  {
+    "id": 54,
+    "brand": "Toyota",
+    "model": "Yaris Cross Urban",
+    "year": 2023,
+    "basePrice": 36000,
+    "mileage": 9000,
+    "condition": "Excellent",
+    "segment": "SUV"
+  },
+  {
+    "id": 55,
+    "brand": "Honda",
+    "model": "Jazz VTi-S",
+    "year": 2018,
+    "basePrice": 21000,
+    "mileage": 56000,
+    "condition": "Good",
+    "segment": "Hatchback"
+  },
+  {
+    "id": 56,
+    "brand": "Hyundai",
+    "model": "Santa Fe Elite",
+    "year": 2020,
+    "basePrice": 52000,
+    "mileage": 41000,
+    "condition": "Good",
+    "segment": "SUV"
+  },
+  {
+    "id": 57,
+    "brand": "Kia",
+    "model": "EV6 GT-Line",
+    "year": 2023,
+    "basePrice": 78000,
+    "mileage": 10000,
+    "condition": "Excellent",
+    "segment": "EV"
+  },
+  {
+    "id": 58,
+    "brand": "Audi",
+    "model": "RS3",
+    "year": 2022,
+    "basePrice": 98000,
+    "mileage": 14000,
+    "condition": "Excellent",
+    "segment": "Sedan"
+  },
+  {
+    "id": 59,
+    "brand": "BMW",
+    "model": "M240i",
+    "year": 2021,
+    "basePrice": 89000,
+    "mileage": 19000,
+    "condition": "Excellent",
+    "segment": "Coupe"
+  },
+  {
+    "id": 60,
+    "brand": "Mercedes-Benz",
+    "model": "E300",
+    "year": 2020,
+    "basePrice": 84000,
+    "mileage": 29000,
+    "condition": "Good",
+    "segment": "Sedan"
   }
 ]
-    

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Garage – Dealership Simulator</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -12,7 +13,12 @@
       <div class="brand-logo small">AUTOLINE</div>
       <span class="app-title">Garage</span>
     </div>
-    <div id="moneyDisplay" class="money-pill"></div>
+
+    <div class="topbar-center">
+      <div id="dayDisplay" class="top-pill dark"></div>
+      <div id="moneyDisplay" class="money-pill"></div>
+    </div>
+
     <nav class="app-nav">
       <a href="market.html">Market</a>
       <a href="garage.html" class="active">Garage</a>
@@ -20,9 +26,14 @@
   </header>
 
   <main class="app-main">
-    <h1 class="page-title">Your Showroom</h1>
-    <p class="page-sub">Manage, price, and flip your owned vehicles.</p>
+    <div class="page-header-row">
+      <div>
+        <h1 class="page-title">Your Showroom</h1>
+        <p class="page-sub">Repair, hold, and flip your stock for bigger margins.</p>
+      </div>
+    </div>
 
+    <section id="garageStats" class="stats-grid"></section>
     <section id="garageList" class="card-grid"></section>
   </main>
 
@@ -30,6 +41,7 @@
   <script>
     loadGame();
     renderMoney();
+    renderDay();
     renderGarage();
   </script>
 

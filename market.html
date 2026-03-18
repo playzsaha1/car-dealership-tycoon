@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Market – Dealership Simulator</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -12,7 +13,12 @@
       <div class="brand-logo small">AUTOLINE</div>
       <span class="app-title">Market</span>
     </div>
-    <div id="moneyDisplay" class="money-pill"></div>
+
+    <div class="topbar-center">
+      <div id="dayDisplay" class="top-pill dark"></div>
+      <div id="moneyDisplay" class="money-pill"></div>
+    </div>
+
     <nav class="app-nav">
       <a href="market.html" class="active">Market</a>
       <a href="garage.html">Garage</a>
@@ -20,9 +26,20 @@
   </header>
 
   <main class="app-main">
-    <h1 class="page-title">Available Inventory</h1>
-    <p class="page-sub">Browse the live market and acquire premium stock.</p>
+    <div class="page-header-row">
+      <div>
+        <h1 class="page-title">Available Inventory</h1>
+        <p class="page-sub">Find underpriced cars, repair smart, and build your empire.</p>
+      </div>
 
+      <div class="page-actions">
+        <button class="btn ghost small-btn" onclick="refreshMarketDay()">
+          Next Day
+        </button>
+      </div>
+    </div>
+
+    <section id="marketStats" class="stats-grid"></section>
     <section id="marketList" class="card-grid"></section>
   </main>
 
@@ -30,6 +47,7 @@
   <script>
     loadGame();
     renderMoney();
+    renderDay();
     loadMarket();
   </script>
 
