@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "brand": "Toyota",
+    "model": "Corolla Ascent Sport",
+    "year": 2019,
+    "basePrice": 21000,
+    "mileage": 65000,
+    "condition": "Good",
+    "segment": "Sedan"
+  },
+  {
+    "id": 2,
+    "brand": "Mazda",
+    "model": "CX-5 Touring",
+    "year": 2018,
+    "basePrice": 28000,
+    "mileage": 72000,
+    "condition": "Fair",
+    "segment": "SUV"
+  },
+  {
+    "id": 3,
+    "brand": "Mercedes-Benz",
+    "model": "C200",
+    "year": 2017,
+    "basePrice": 35000,
+    "mileage": 90000,
+    "condition": "Needs Work",
+    "segment": "Sedan"
+  }
+]
