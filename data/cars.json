@@ -1,4 +1,4 @@
-[
+
   {
     "id": 1,
     "brand": "Toyota",
@@ -38,5 +38,6 @@
     "mileage": 85000,
     "condition": "Good",
     "segment": "Sedan"
-}, 
+  }, 
+  
 
