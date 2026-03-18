@@ -38,5 +38,16 @@
     "mileage": 50000,
     "condition": "Fair",
     "segment": "SUV"
+  },
+  {
+    "id": 5,
+    "brand": "bmw",
+    "model": "m3",
+    "year": 2023,
+    "basePrice":160000,
+    "mileage":8000,
+    "condition": "Good",
+    "segment":"Sedan"
   }
 ]
+    
