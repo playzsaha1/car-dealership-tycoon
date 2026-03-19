@@ -598,5 +598,15 @@
     "mileage": 29000,
     "condition": "Good",
     "segment": "Sedan"
+  },
+  {
+    "id": 61,
+    "brand": "Range Rover",
+    "model": "Velar",
+    "year": 2024,
+    "basePrice": 119000,
+    "mileage": 2000,
+    "condition":"Excellent",
+    "segment":"SUV"
   }
 ]
