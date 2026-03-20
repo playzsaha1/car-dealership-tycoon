@@ -609,14 +609,15 @@
     "condition":"Excellent",
     "segment":"SUV"
   },
-  {
+ {
   "id": 62,
   "brand": "Porsche",
-  "model": "cayenne",
+  "model": "Cayenne",
   "year": 2023,
-  "baseprice": 80000,
+  "basePrice": 80000,
   "mileage": 65000,
-  "condition": "needs work",
-  "segment":"SUV"
-  }
+  "condition": "Needs Work",
+  "segment": "SUV"
+}
+
 ]
