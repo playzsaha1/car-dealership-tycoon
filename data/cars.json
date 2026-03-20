@@ -609,7 +609,7 @@
     "condition":"Excellent",
     "segment":"SUV"
   },
- {
+  {
   "id": 62,
   "brand": "Porsche",
   "model": "Cayenne",
@@ -618,6 +618,16 @@
   "mileage": 65000,
   "condition": "Needs Work",
   "segment": "SUV"
-}
+  },
+  {
+    "id":63,
+    "brand": "Toyota",
+    "model": "Rav4",
+    "year": 2021,
+    "basePrice": 25000,
+    "mileage": 70000,
+    "condition": "Excellent",
+    "segment": "SUV"
+  }
+]   
 
-]
