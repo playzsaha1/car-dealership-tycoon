@@ -1,49 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Garage – Dealership Simulator</title>
+  <title>Garage</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="page-app">
 
-  <header class="app-topbar">
-    <div class="brand-left">
-      <div class="brand-logo small">AUTOLINE</div>
-      <span class="app-title">Garage</span>
-    </div>
+<header class="topbar">
+  <h2>Garage</h2>
+  <div id="moneyDisplay"></div>
+  <a href="market.html">Market</a>
+</header>
 
-    <div class="topbar-center">
-      <div id="dayDisplay" class="top-pill dark"></div>
-      <div id="moneyDisplay" class="money-pill"></div>
-    </div>
+<div class="app-main">
+  <div id="garageList" class="grid"></div>
+</div>
 
-    <nav class="app-nav">
-      <a href="market.html">Market</a>
-      <a href="garage.html" class="active">Garage</a>
-    </nav>
-  </header>
-
-  <main class="app-main">
-    <div class="page-header-row">
-      <div>
-        <h1 class="page-title">Your Showroom</h1>
-        <p class="page-sub">Repair, hold, and flip your stock for bigger margins.</p>
-      </div>
-    </div>
-
-    <section id="garageStats" class="stats-grid"></section>
-    <section id="garageList" class="card-grid"></section>
-  </main>
-
-  <script src="script.js"></script>
-  <script>
-    loadGame();
-    renderMoney();
-    renderDay();
-    renderGarage();
-  </script>
+<script src="script.js"></script>
+<script>
+loadGame();
+renderMoney();
+renderGarage();
+</script>
 
 </body>
 </html>

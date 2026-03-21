@@ -1,55 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Market – Dealership Simulator</title>
+  <title>Market</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="page-app">
 
-  <header class="app-topbar">
-    <div class="brand-left">
-      <div class="brand-logo small">AUTOLINE</div>
-      <span class="app-title">Market</span>
-    </div>
+<header class="topbar">
+  <h2>Market</h2>
+  <div id="moneyDisplay"></div>
+  <a href="garage.html">Garage</a>
+</header>
 
-    <div class="topbar-center">
-      <div id="dayDisplay" class="top-pill dark"></div>
-      <div id="moneyDisplay" class="money-pill"></div>
-    </div>
+<div class="app-main">
+  <button onclick="nextDay()">Next Day</button>
+  <div id="marketList" class="grid"></div>
+</div>
 
-    <nav class="app-nav">
-      <a href="market.html" class="active">Market</a>
-      <a href="garage.html">Garage</a>
-    </nav>
-  </header>
-
-  <main class="app-main">
-    <div class="page-header-row">
-      <div>
-        <h1 class="page-title">Available Inventory</h1>
-        <p class="page-sub">Find underpriced cars, repair smart, and build your empire.</p>
-      </div>
-
-      <div class="page-actions">
-        <button class="btn ghost small-btn" onclick="refreshMarketDay()">
-          Next Day
-        </button>
-      </div>
-    </div>
-
-    <section id="marketStats" class="stats-grid"></section>
-    <section id="marketList" class="card-grid"></section>
-  </main>
-
-  <script src="script.js"></script>
-  <script>
-    loadGame();
-    renderMoney();
-    renderDay();
-    loadMarket();
-  </script>
+<script src="script.js"></script>
+<script>
+loadGame();
+renderMoney();
+loadMarket();
+</script>
 
 </body>
 </html>

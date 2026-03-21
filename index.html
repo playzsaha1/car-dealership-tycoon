@@ -1,51 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Car Dealership Simulator</title>
+  <title>Autoline</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="page-landing">
 
-  <header class="brand-bar">
-    <div class="brand-logo">AUTOLINE</div>
-    <nav>
-      <a href="market.html">Market</a>
-      <a href="garage.html">Garage</a>
-    </nav>
-  </header>
+<header class="brand-bar">
+  <h1 class="brand-logo">AUTOLINE</h1>
+  <nav>
+    <a href="market.html">Market</a>
+    <a href="garage.html">Garage</a>
+  </nav>
+</header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Build Your Own Dealership.</h1>
-      <p>Trade smart, grow fast, and create a premium showroom worthy of the world’s top brands.</p>
+<section class="hero">
+  <h1>Build Your Dealership Empire</h1>
+  <p>Buy low. Repair. Sell high.</p>
 
-      <div class="hero-actions">
-        <button id="startBtn" class="btn primary">Start New Dealership</button>
-        <button id="continueBtn" class="btn ghost">Continue</button>
-      </div>
-    </div>
+  <button onclick="startGame()" class="btn primary">Start Game</button>
+  <button onclick="resetGame()" class="btn ghost">Reset Game</button>
+</section>
 
-    <div class="glass-panel">
-      <div class="light-streak"></div>
-      <div class="light-streak delay"></div>
-      <h2>Showroom Mode</h2>
-      <p>Experience a premium dealership environment with dynamic pricing and realistic market flow.</p>
-    </div>
-  </section>
-
-  <script src="script.js"></script>
-  <script>
-    document.getElementById('startBtn').onclick = () => {
-      startNewGame();
-      window.location.href = 'market.html';
-    };
-
-    document.getElementById('continueBtn').onclick = () => {
-      window.location.href = 'market.html';
-    };
-  </script>
+<script src="script.js"></script>
+<script>
+function startGame(){
+  startNewGame();
+  window.location.href="market.html";
+}
+</script>
 
 </body>
 </html>

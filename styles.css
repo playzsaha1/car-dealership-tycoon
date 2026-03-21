@@ -1,0 +1,56 @@
+body {
+  font-family: Arial;
+  background: black;
+  color: white;
+}
+
+/* TOP */
+.topbar {
+  display:flex;
+  justify-content:space-between;
+  padding:20px;
+  background:#111;
+}
+
+.brand-logo {
+  color: yellow;
+}
+
+/* HERO */
+.hero {
+  padding:100px;
+  text-align:center;
+}
+
+/* BUTTONS */
+.btn {
+  padding:10px 20px;
+  margin:10px;
+  border:none;
+  cursor:pointer;
+}
+
+.btn.primary {
+  background: yellow;
+  color:black;
+}
+
+.btn.ghost {
+  border:1px solid yellow;
+  background:none;
+  color:yellow;
+}
+
+/* GRID */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  padding:20px;
+}
+
+/* CARD */
+.card {
+  border:1px solid yellow;
+  padding:15px;
+}
