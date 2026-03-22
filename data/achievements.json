@@ -1,0 +1,20 @@
+[
+{
+   "name": "First Flip",
+   "description": "Sell Three Cars",
+   "condition": "carsSold",
+   "target": 3
+},
+{
+    "name": "Big Money",
+    "description": "reach 500000",
+    "condition": "money",
+    "target": 500000
+},
+{
+    "name": "exclusive rank",
+    "description": "reach 1000000",
+    "condition": "money",
+    "target": 1000000
+}
+]
