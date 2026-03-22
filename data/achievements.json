@@ -16,5 +16,11 @@
     "description": "reach 1000000",
     "condition": "money",
     "target": 1000000
+},
+{
+    "name": "excotic garage",
+    "description": "sell 30 cars",
+    "condition": "carsSold",
+    "target": 30
 }
 ]
