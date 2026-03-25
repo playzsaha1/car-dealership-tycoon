@@ -225,5 +225,7 @@
 {"id":197,"brand":"Nissan","model":"GT-R","year":2022,"basePrice":180000,"mileage":10000,"condition":"Excellent","segment":"Sports"},
 {"id":198,"brand":"Subaru","model":"WRX STI","year":2021,"basePrice":60000,"mileage":20000,"condition":"Excellent","segment":"Sports"},
 {"id":199,"brand":"BMW","model":"XM","year":2023,"basePrice":160000,"mileage":12000,"condition":"Excellent","segment":"Luxury"},
-{"id":200,"brand":"Mercedes","model":"Maybach S680","year":2023,"basePrice":250000,"mileage":8000,"condition":"Excellent","segment":"Luxury"}
+{"id":200,"brand":"Mercedes","model":"Maybach S680","year":2023,"basePrice":250000,"mileage":8000,"condition":"Excellent","segment":"Luxury"},
+{"id":201,"brand":"Toyota","model":"Kluger","year":2017,"basePrice":34000,"mileage":80000,"condition":"Fair","segment":"SUV"}
 ]
+
