@@ -28,5 +28,15 @@
     "mileage": 45000,
     "condition": "Good",
     "segment": "Sedan"
+  },
+  {
+    "id": 4,
+    "brand": "Audi",
+    "model": "RS6",
+    "year": 2023,
+    "baseprice": 60000,
+    "mileage": 320000,
+    "condition": "Fair",
+    "segment": "Wagon"
   }
 ]
