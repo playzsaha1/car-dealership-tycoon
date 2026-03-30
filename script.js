@@ -1,4 +1,4 @@
-const START_MONEY = 150000;
+const START_MONEY = 135000;
 
 let game = {
   money: START_MONEY,
