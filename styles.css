@@ -1,6 +1,6 @@
 body {
   font-family: Arial;
-  background: black;
+  background: rgb(24, 232, 65);
   color: white;
 }
 
@@ -9,11 +9,11 @@ body {
   display:flex;
   justify-content:space-between;
   padding:20px;
-  background:#111;
+  background:#dd9d3d;
 }
 
 .brand-logo {
-  color: yellow;
+  color: rgb(204, 24, 132);
 }
 
 /* HERO */
@@ -31,7 +31,7 @@ body {
 }
 
 .btn.primary {
-  background: yellow;
+  background: rgb(22, 216, 255);
   color:black;
 }
 
