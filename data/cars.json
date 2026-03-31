@@ -38,5 +38,15 @@
     "mileage": 320000,
     "condition": "Fair",
     "segment": "Wagon"
+  },
+  {
+    "id": 5,
+    "brand": "Toyota",
+    "model": "Kluger",
+    "year": 2017,
+    "baseprice": 35000,
+    "mileage": 25000,
+    "condition": "Excellent",
+    "segment": "Suv"
   }
 ]
