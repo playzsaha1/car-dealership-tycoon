@@ -48,5 +48,15 @@
     "mileage": 25000,
     "condition": "Excellent",
     "segment": "Suv"
+  },
+  {
+    "id": 6,
+    "brand": "Mazda",
+    "model": "CX-5",
+    "year": 2023,
+    "baseprice": 28000,
+    "mileage": 65000,
+    "condition": "Good",
+    "segment": "Suv"
   }
 ]
