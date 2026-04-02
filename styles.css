@@ -13,7 +13,7 @@ body {
 }
 
 .brand-logo {
-  color: rgb(204, 24, 132);
+  color: rgb(164, 222, 30);
 }
 
 /* HERO */
@@ -32,13 +32,13 @@ body {
 
 .btn.primary {
   background: rgb(22, 216, 255);
-  color:black;
+  color:rgb(137, 36, 231);
 }
 
 .btn.ghost {
-  border:1px solid yellow;
+  border:1px solid rgb(116, 196, 220);
   background:none;
-  color:yellow;
+  color:rgb(108, 96, 187);
 }
 
 /* GRID */
