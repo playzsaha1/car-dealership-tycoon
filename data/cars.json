@@ -28,35 +28,5 @@
     "mileage": 45000,
     "condition": "Good",
     "segment": "Sedan"
-  },
-  {
-    "id": 4,
-    "brand": "Audi",
-    "model": "RS6",
-    "year": 2023,
-    "baseprice": 60000,
-    "mileage": 320000,
-    "condition": "Fair",
-    "segment": "Wagon"
-  },
-  {
-    "id": 5,
-    "brand": "Toyota",
-    "model": "Kluger",
-    "year": 2017,
-    "baseprice": 35000,
-    "mileage": 25000,
-    "condition": "Excellent",
-    "segment": "Suv"
-  },
-  {
-    "id": 6,
-    "brand": "Mazda",
-    "model": "CX-5",
-    "year": 2023,
-    "baseprice": 28000,
-    "mileage": 65000,
-    "condition": "Good",
-    "segment": "Suv"
   }
 ]
