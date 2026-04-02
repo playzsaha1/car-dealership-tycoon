@@ -1,6 +1,6 @@
 body {
   font-family: Arial;
-  background: rgb(24, 232, 65);
+  background: rgb(20, 178, 175);
   color: white;
 }
 
@@ -9,7 +9,7 @@ body {
   display:flex;
   justify-content:space-between;
   padding:20px;
-  background:#dd9d3d;
+  background:#1c9aa0;
 }
 
 .brand-logo {
