@@ -20,8 +20,23 @@
   <p>Buy low. Repair. Sell high.</p>
 
   <button onclick="startGame()" class="btn primary">Start Game</button>
+  <button onclick="replayTutorial()" class="btn primary">Tutorial</button>
   <button onclick="resetGame()" class="btn ghost">Reset Game</button>
 </section>
+
+<!-- Tutorial Modal -->
+<div id="tutorialOverlay" class="tutorial-overlay"></div>
+<div id="tutorialModal" class="tutorial-modal">
+  <div class="tutorial-content">
+    <h2 id="tutorialTitle"></h2>
+    <p id="tutorialDesc"></p>
+    <p id="tutorialAction" class="tutorial-action"></p>
+    <div class="tutorial-buttons">
+      <button onclick="nextTutorialStep()" class="btn primary">Next</button>
+      <button onclick="endTutorial()" class="btn ghost">Skip Tutorial</button>
+    </div>
+  </div>
+</div>
 
 <script src="script.js"></script>
 <script>

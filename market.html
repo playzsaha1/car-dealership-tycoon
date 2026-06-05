@@ -10,7 +10,7 @@
 <header class="topbar">
   <h2>Market</h2>
   <div id="moneyDisplay"></div>
-  <a href="garage.html">Garage</a>
+  <a href="garage.html" id="garage-link">Garage</a>
 </header>
 
 <div class="app-main">
@@ -18,11 +18,28 @@
   <div id="marketList" class="grid"></div>
 </div>
 
+<!-- Tutorial Modal -->
+<div id="tutorialOverlay" class="tutorial-overlay"></div>
+<div id="tutorialModal" class="tutorial-modal">
+  <div class="tutorial-content">
+    <h2 id="tutorialTitle"></h2>
+    <p id="tutorialDesc"></p>
+    <p id="tutorialAction" class="tutorial-action"></p>
+    <div class="tutorial-buttons">
+      <button onclick="nextTutorialStep()" class="btn primary">Next</button>
+      <button onclick="endTutorial()" class="btn ghost">Skip Tutorial</button>
+    </div>
+  </div>
+</div>
+
 <script src="script.js"></script>
 <script>
 loadGame();
 renderMoney();
 loadMarket();
+if (!game.tutorialComplete && !tutorialState.active) {
+  startTutorial();
+}
 </script>
 
 </body>

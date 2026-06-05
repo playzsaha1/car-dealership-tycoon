@@ -12,7 +12,13 @@ let game = {
     mechanicBay: 0,
     premiumShowroom: 0,
     buyerNetwork: 0
-  }
+  },
+  tutorialComplete: false
+};
+
+let tutorialState = {
+  active: false,
+  step: 0
 };
 
 /* =========================
@@ -42,14 +48,138 @@ function startNewGame() {
       mechanicBay: 0,
       premiumShowroom: 0,
       buyerNetwork: 0
-    }
+    },
+    tutorialComplete: false
   };
   saveGame();
+  startTutorial();
 }
 
 function resetGame() {
   localStorage.removeItem("game");
   location.reload();
+}
+
+/* =========================
+   TUTORIAL SYSTEM
+========================= */
+const tutorialSteps = [
+  {
+    title: "Welcome to Autoline!",
+    description: "Build your car dealership empire. Buy cars low, repair them, and sell them for profit. Let's get you started!",
+    highlight: null,
+    action: "Click 'Next' to continue"
+  },
+  {
+    title: "The Market",
+    description: "Visit the Market to find cars to buy. Each car has different conditions (Broken → Excellent), prices, and rarity levels. Look for underpriced cars with repair potential!",
+    highlight: "market-link",
+    action: "You'll see the market next"
+  },
+  {
+    title: "Buying Cars",
+    description: "When you find a car you like in the Market, click 'Buy' to purchase it. Your balance decreases, and the car joins your garage. You have $150,000 to start!",
+    highlight: null,
+    action: "Click 'Next' when ready"
+  },
+  {
+    title: "Your Garage",
+    description: "Your garage shows all the cars you own. You can see each car's current value, condition, and potential profit. This is where you manage your inventory!",
+    highlight: "garage-link",
+    action: "Visit your Garage next"
+  },
+  {
+    title: "Repairing Cars",
+    description: "Cars in worse condition are cheaper to buy but need repairs. Click 'Repair' to improve a car's condition. Better condition = higher resale value. Repair costs vary by condition.",
+    highlight: null,
+    action: "Click 'Next' to continue"
+  },
+  {
+    title: "Selling Cars",
+    description: "Once you've fixed up a car, click 'Sell' to find a buyer. Your profit is calculated based on the car's rarity, current condition, and your upgrades. Rare cars sell better!",
+    highlight: null,
+    action: "Click 'Next' to learn about upgrades"
+  },
+  {
+    title: "Upgrades & Growth",
+    description: "In your Garage, you'll find an Upgrades Shop. Invest in: Mechanic Bay (cheaper repairs), Premium Showroom (better sell prices), Buyer Network (more cars in market). These are key to scaling your business!",
+    highlight: null,
+    action: "Click 'Next' to continue"
+  },
+  {
+    title: "The Day System",
+    description: "Click 'Next Day' in the Market to advance time. Each day, a fresh set of cars appears in the market. Time doesn't stop you from earning—maximize your profits!",
+    highlight: null,
+    action: "Click 'Next' to start playing"
+  },
+  {
+    title: "You're Ready!",
+    description: "Now you have everything you need to build your dealership empire. Buy smart, repair strategically, and sell for maximum profit. Good luck, tycoon!",
+    highlight: null,
+    action: "Click 'Start Game' to begin"
+  }
+];
+
+function startTutorial() {
+  tutorialState.active = true;
+  tutorialState.step = 0;
+  showTutorialStep();
+}
+
+function showTutorialStep() {
+  if (tutorialState.step >= tutorialSteps.length) {
+    endTutorial();
+    return;
+  }
+
+  const step = tutorialSteps[tutorialState.step];
+  const modal = document.getElementById("tutorialModal");
+  const overlay = document.getElementById("tutorialOverlay");
+
+  if (!modal || !overlay) return;
+
+  document.getElementById("tutorialTitle").innerText = step.title;
+  document.getElementById("tutorialDesc").innerText = step.description;
+  document.getElementById("tutorialAction").innerText = step.action;
+
+  modal.style.display = "block";
+  overlay.style.display = "block";
+
+  if (step.highlight) {
+    const highlighted = document.getElementById(step.highlight);
+    if (highlighted) {
+      highlighted.classList.add("tutorial-highlight");
+    }
+  }
+}
+
+function nextTutorialStep() {
+  const step = tutorialSteps[tutorialState.step];
+  if (step && step.highlight) {
+    const highlighted = document.getElementById(step.highlight);
+    if (highlighted) {
+      highlighted.classList.remove("tutorial-highlight");
+    }
+  }
+
+  tutorialState.step++;
+  showTutorialStep();
+}
+
+function endTutorial() {
+  const modal = document.getElementById("tutorialModal");
+  const overlay = document.getElementById("tutorialOverlay");
+
+  if (modal) modal.style.display = "none";
+  if (overlay) overlay.style.display = "none";
+
+  game.tutorialComplete = true;
+  saveGame();
+}
+
+function replayTutorial() {
+  tutorialState.step = 0;
+  showTutorialStep();
 }
 
 /* =========================
