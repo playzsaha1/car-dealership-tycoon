@@ -13,13 +13,61 @@ let game = {
     premiumShowroom: 0,
     buyerNetwork: 0
   },
-  tutorialComplete: false
+  tutorialComplete: false,
+  achievements: {}
 };
 
 let tutorialState = {
   active: false,
   step: 0
 };
+
+let achievementData = [];
+
+async function loadAchievements() {
+  try {
+    const res = await fetch("data/achievements.json");
+    achievementData = await res.json();
+  } catch (e) {
+    console.log("Could not load achievements");
+  }
+}
+
+function checkAchievements() {
+  if (!achievementData || achievementData.length === 0) return;
+
+  achievementData.forEach(achievement => {
+    const currentValue = game.stats[achievement.condition];
+    if (currentValue >= achievement.target && !game.achievements) {
+      game.achievements = {};
+    }
+    if (game.achievements && !game.achievements[achievement.name] && currentValue >= achievement.target) {
+      game.achievements[achievement.name] = true;
+      showNotification(`🏆 Achievement Unlocked: ${achievement.name}`, achievement.description, 'achievement');
+      saveGame();
+    }
+  });
+}
+
+function showNotification(title, message, type = 'info') {
+  const container = document.getElementById('notificationContainer');
+  if (!container) return;
+
+  const notification = document.createElement('div');
+  notification.className = `notification notification-${type}`;
+  notification.innerHTML = `<div class="notification-content"><strong>${title}</strong><p>${message}</p></div>`;
+  
+  container.appendChild(notification);
+  
+  setTimeout(() => {
+    notification.classList.add('notification-show');
+  }, 10);
+  
+  setTimeout(() => {
+    notification.classList.remove('notification-show');
+    setTimeout(() => notification.remove(), 300);
+  }, 4000);
+}
 
 /* =========================
    SAVE / LOAD
@@ -49,7 +97,8 @@ function startNewGame() {
       premiumShowroom: 0,
       buyerNetwork: 0
     },
-    tutorialComplete: false
+    tutorialComplete: false,
+    achievements: {}
   };
   saveGame();
   startTutorial();
@@ -212,6 +261,23 @@ function getRarity(car) {
   return "Common";
 }
 
+function getRarityClass(rarity) {
+  if (rarity === "Exotic") return "rarity-exotic";
+  if (rarity === "Rare") return "rarity-rare";
+  return "rarity-common";
+}
+
+function getConditionPercentage(condition) {
+  const conditionMap = {
+    "Broken": 10,
+    "Needs Work": 40,
+    "Fair": 60,
+    "Good": 85,
+    "Excellent": 100
+  };
+  return conditionMap[condition] || 0;
+}
+
 function conditionMultiplier(condition) {
   if (condition === "Broken") return 0.45;
   if (condition === "Needs Work") return 0.65;
@@ -282,19 +348,25 @@ async function loadMarket() {
 
   selected.forEach((car) => {
     const rarity = getRarity(car);
+    const conditionPercent = getConditionPercentage(car.condition);
 
     const card = document.createElement("div");
-    card.className = "card";
+    card.className = "card card-market";
 
     card.innerHTML = `
-      <h3>${car.brand} ${car.model}</h3>
-      <p><strong>Year:</strong> ${car.year}</p>
-      <p><strong>Price:</strong> ${formatMoney(car.basePrice)}</p>
-      <p><strong>Mileage:</strong> ${car.mileage.toLocaleString()} km</p>
-      <p><strong>Condition:</strong> ${car.condition}</p>
-      <p><strong>Segment:</strong> ${car.segment}</p>
-      <p><strong>Rarity:</strong> ${rarity}</p>
-      <button onclick="buyCar(${car.id})">Buy</button>
+      <div class="card-header">
+        <h3>${car.brand} ${car.model}</h3>
+        <span class="rarity-badge ${getRarityClass(rarity)}">${rarity}</span>
+      </div>
+      <p class="card-year">🗓️ ${car.year}</p>
+      <p class="card-price">💰 ${formatMoney(car.basePrice)}</p>
+      <p class="card-mileage">📍 ${car.mileage.toLocaleString()} km</p>
+      <div class="condition-bar">
+        <div class="condition-fill" style="width: ${conditionPercent}%; background: ${conditionPercent > 70 ? '#4ade80' : conditionPercent > 40 ? '#fbbf24' : '#ef4444'}"></div>
+      </div>
+      <p class="card-condition">Condition: <strong>${car.condition}</strong></p>
+      <p class="card-segment">${car.segment}</p>
+      <button onclick="buyCar(${car.id})" class="btn primary" style="width: 100%">Buy Now</button>
     `;
 
     container.appendChild(card);
@@ -333,7 +405,7 @@ function buyCar(id) {
   if (!car) return;
 
   if (game.money < car.basePrice) {
-    alert("Not enough money.");
+    showNotification("Insufficient Funds", "You don't have enough money to buy this car.", 'error');
     return;
   }
 
@@ -344,7 +416,9 @@ function buyCar(id) {
     buyPrice: car.basePrice
   });
 
+  showNotification(`Purchased ${car.brand} ${car.model}`, `Paid ${formatMoney(car.basePrice)}`, 'success');
   saveGame();
+  checkAchievements();
   renderMoney();
   renderGarage();
   renderMarketStats();
@@ -365,21 +439,32 @@ function renderGarage() {
     const repairCost = getRepairCost(car);
     const rarity = getRarity(car);
     const canRepair = car.condition !== "Excellent";
+    const conditionPercent = getConditionPercentage(car.condition);
+    const profitEmoji = profit > 0 ? '📈' : '📉';
 
     const card = document.createElement("div");
-    card.className = "card";
+    card.className = "card card-garage";
 
     card.innerHTML = `
-      <h3>${car.brand} ${car.model}</h3>
-      <p><strong>Year:</strong> ${car.year}</p>
-      <p><strong>Bought For:</strong> ${formatMoney(car.buyPrice)}</p>
-      <p><strong>Current Value:</strong> ${formatMoney(currentValue)}</p>
-      <p><strong>Condition:</strong> ${car.condition}</p>
-      <p><strong>Rarity:</strong> ${rarity}</p>
-      <p><strong>Profit:</strong> ${formatMoney(profit)}</p>
-      <p><strong>Repair Cost:</strong> ${canRepair ? formatMoney(repairCost) : "Maxed Out"}</p>
-      <button onclick="repairCar(${index})" ${canRepair ? "" : "disabled"}>Repair</button>
-      <button onclick="sellCar(${index})">Sell</button>
+      <div class="card-header">
+        <h3>${car.brand} ${car.model}</h3>
+        <span class="rarity-badge ${getRarityClass(rarity)}">${rarity}</span>
+      </div>
+      <p class="card-year">🗓️ ${car.year}</p>
+      <div class="card-values">
+        <div class="value-item">Bought: ${formatMoney(car.buyPrice)}</div>
+        <div class="value-item">Current: ${formatMoney(currentValue)}</div>
+        <div class="value-item profit-item ${profit > 0 ? 'profit-positive' : 'profit-negative'}">${profitEmoji} ${formatMoney(profit)}</div>
+      </div>
+      <div class="condition-bar">
+        <div class="condition-fill" style="width: ${conditionPercent}%; background: ${conditionPercent > 70 ? '#4ade80' : conditionPercent > 40 ? '#fbbf24' : '#ef4444'}"></div>
+      </div>
+      <p class="card-condition">Condition: <strong>${car.condition}</strong></p>
+      <p class="card-mileage">📍 ${car.mileage.toLocaleString()} km</p>
+      <div class="card-actions">
+        <button onclick="repairCar(${index})" class="btn ${canRepair ? 'primary' : 'disabled'}" ${canRepair ? "" : "disabled"}>Repair ${canRepair ? '(' + formatMoney(repairCost) + ')' : '✓'}</button>
+        <button onclick="sellCar(${index})" class="btn primary">Sell</button>
+      </div>
     `;
 
     container.appendChild(card);
@@ -423,21 +508,24 @@ function repairCar(index) {
   if (!car) return;
 
   if (car.condition === "Excellent") {
-    alert("This car is already at maximum condition.");
+    showNotification("Already Perfect", "This car is at maximum condition.", 'info');
     return;
   }
 
   const repairCost = getRepairCost(car);
 
   if (game.money < repairCost) {
-    alert("Not enough money to repair this car.");
+    showNotification("Insufficient Funds", "Not enough money to repair this car.", 'error');
     return;
   }
 
   game.money -= repairCost;
+  const oldCondition = car.condition;
   car.condition = getNextCondition(car.condition);
 
+  showNotification(`${car.brand} ${car.model} Repaired`, `Upgraded from ${oldCondition} to ${car.condition} (Cost: ${formatMoney(repairCost)})`, 'success');
   saveGame();
+  checkAchievements();
   renderMoney();
   renderGarage();
 }
@@ -459,9 +547,13 @@ function sellCar(index) {
 
   game.garage.splice(index, 1);
 
+  const profitColor = profit > 0 ? '✨' : '📊';
+  showNotification(`${car.brand} ${car.model} Sold!`, `Sold for ${formatMoney(sellPrice)} ${profitColor} Profit: ${formatMoney(profit)}`, 'success');
   saveGame();
+  checkAchievements();
   renderMoney();
   renderGarage();
+  renderMarketStats();
 }
 
 /* =========================
@@ -501,13 +593,20 @@ function renderUpgradeShop() {
 
 function buyUpgrade(type, cost) {
   if (game.money < cost) {
-    alert("Not enough money for this upgrade.");
+    showNotification("Insufficient Funds", "You need more money for this upgrade.", 'error');
     return;
   }
 
   game.money -= cost;
   game.upgrades[type] += 1;
 
+  const upgradeNames = {
+    mechanicBay: "Mechanic Bay",
+    premiumShowroom: "Premium Showroom",
+    buyerNetwork: "Buyer Network"
+  };
+
+  showNotification(`📈 ${upgradeNames[type]} Upgraded!`, `Upgraded to Level ${game.upgrades[type]}`, 'success');
   saveGame();
   renderMoney();
   renderGarage();
@@ -526,7 +625,7 @@ function nextDay() {
     game.garage.forEach(car => {
       car.basePrice = Math.floor(car.basePrice * 1.08);
     });
-    alert("Market boom! Your inventory value increased.");
+    showNotification("📊 Market Boom!", "Your inventory value increased by 8%!", 'info');
   } else if (eventRoll < 0.45 && game.garage.length > 0) {
     const randomIndex = Math.floor(Math.random() * game.garage.length);
     const target = game.garage[randomIndex];
@@ -536,14 +635,16 @@ function nextDay() {
     else if (target.condition === "Fair") target.condition = "Needs Work";
     else if (target.condition === "Needs Work") target.condition = "Broken";
 
-    alert(`${target.brand} ${target.model} suffered storm damage.`);
+    showNotification("⛈️ Storm Damage!", `${target.brand} ${target.model} was damaged. Condition decreased.`, 'warning');
   } else if (eventRoll < 0.6) {
     game.garage.forEach(car => {
       if (car.brand === "Mercedes") {
         car.basePrice = Math.floor(car.basePrice * 1.15);
       }
     });
-    alert("Luxury demand spike! Mercedes values increased.");
+    showNotification("💎 Luxury Demand!", "Mercedes values increased by 15%!", 'info');
+  } else {
+    showNotification("☀️ Next Day", `Day ${game.day} - Fresh cars are available!", 'info');
   }
 
   saveGame();
