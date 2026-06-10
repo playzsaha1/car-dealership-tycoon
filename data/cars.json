@@ -34,7 +34,7 @@
     "brand": "Mazda",
     "model": "CX-5",
     "year": 2022,
-    "baseprice": 30000,
+    "basePrice": 30000,
     "mileage": 87000,
     "condition": "Excellent",
     "segment": "SUV"
